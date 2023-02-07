@@ -8,6 +8,6 @@
 
 # Maintainers
 - [Iman Mohammadi](https://github.com/Imanm02)
-- [Ali Shahali](https://github.com/AlisaLC)
-- [Parsa Massah](https://github.com/eyepatchss)
-- [Amirmahdi Namjoo](https://github.com/ArminS1000)
+- [Ali Shahali](https://github.com/alishahali1382)
+- [Parsa Massah](https://github.com/mparsam)
+- [Amirmahdi Namjoo](https://github.com/titansarus)
