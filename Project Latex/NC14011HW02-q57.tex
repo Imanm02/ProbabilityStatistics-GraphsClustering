@@ -1,0 +1,12 @@
+سوال تئوری ۳۴
+
+$$Markov Inequality:$$
+$$P(X_n \ge 1) \le \frac{E[X_n]}{1} = \binom{n}{2}(1-p^2)^{n-2}$$
+$$\lim\limits_{n \to \infty} \binom{n}{2}(1-p^2)^{n-2} \ = \ $$
+$$\lim\limits_{n \to \infty} \cfrac{n(n-1)}{2 \ (1-p^2)^{2-n}} \ =$$
+$$\lim\limits_{n \to \infty} \cfrac{n(n-1)}{2 \ (e^{ln(1-p^2)})^{2-n}} \ = \ $$
+$$\lim\limits_{n \to \infty} \cfrac{n(n-1)}{2 \ e^{ln(1-p^2)(2-n)}} \ = \ $$
+$$\lim\limits_{n \to \infty} \cfrac{2n-1}{-2 \ ln(1-p^2)e^{ln(1-p^2)(2-n)}} \ = \ $$
+$$\lim\limits_{n \to \infty} \cfrac{2}{-2 \ ln(1-p^2)^2 e^{ln(1-p^2)(2-n)}} \ = \ $$
+$$\cfrac{-1}{ln(1-p^2)^2} \ \lim\limits_{n \to \infty} e^{ln(1-p^2)(n-2)} \ = \ $$
+$$\cfrac{-1}{ln(1-p^2)^2} \ \lim\limits_{n \to \infty} (1-p^2)^{n-2} \ = \ 0 $$

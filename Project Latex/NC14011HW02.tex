@@ -1,0 +1,422 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper,margin=2cm,top=2cm,bottom=2cm,xetex]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{color,xcolor}
+\usepackage{graphicx,algorithm,algorithmic,booktabs,multirow, multicol,float,amsfonts}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{flexisym}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{tabularx}
+\usepackage{xepersian}
+\usepackage{amsmath}
+\usepackage{physics}
+\usepackage{listings}
+
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+
+% Custom colors
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\usepackage{listings}
+
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+morekeywords={self},              % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=none,                         % Any extra options here
+showstringspaces=false
+}}
+
+
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+
+% Python for external files
+\newcommand\pythonexternal[2][]{{
+\pythonstyle
+\lstinputlisting[#1]{#2}}}
+
+% Python for inline
+\newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
+
+%\usepackage{mathtools}
+
+\DeclareFontFamily{U}{matha}{\hyphenchar\font45}
+\DeclareFontShape{U}{matha}{m}{n}{ <-6> matha5 <6-7> matha6 <7-8>
+matha7 <8-9> matha8 <9-10> matha9 <10-12> matha10 <12-> matha12 }{}
+%\DeclareSymbolFont{matha}{U}{matha}{m}{n}
+%
+%\DeclareMathSymbol{\nvartrianglelefteq}{\mathrel}{matha}{"9E}
+%\DeclareMathSymbol{\vartrianglelefteq}{\mathrel}{matha}{"9C}
+
+\newcount\HWcnt
+\def\ttmp#1#2#3#4#5#6#7#8#9|{\def\Wjob{#9}}%
+\expandafter\ttmp\jobname |
+\def\ttmp#1#2#3{\global\HWcnt=#2#3}
+\expandafter\ttmp\Wjob
+
+\settextfont[Scale = 1.0 ,
+             BoldFont = *Bd ,
+             ItalicFont = *It ,
+             BoldItalicFont = *BdIt ,
+             Extension = .ttf
+            ]{XB Niloofar}
+\ExplSyntaxOn
+\cs_set_eq:NN
+\etex_iffontchar:D
+\tex_iffontchar:D
+\cs_undefine:N \c_one
+\int_const:Nn \c_one { 1 }
+\ExplSyntaxOff
+\setdigitfont[Scale = 1.0 ,
+             BoldFont = *Bd ,
+             ItalicFont = *It ,
+             BoldItalicFont = *BdIt ,
+             Extension = .ttf
+            ]{XB Niloofar}
+\renewcommand{\baselinestretch}{1.2}
+\pagestyle{empty}
+
+\makeatletter
+\def\abj@num@i#1{%
+    \ifcase #1\or الف\or ب\or ج\or د\or ه\or و\or ز\or ح\or ط\fi \ifnum #1=\z@ \abjad@zero \fi
+}
+\renewcommand{\theenumi}{\abjad{enumi}}
+\renewcommand{\labelenumi}{\theenumi)}
+\long\def\makeHead#1{%
+	\begin{center}\large
+		\begin{tabular}{@{}p{.33\linewidth}<{\hfill}@{}>{\hfil}p{.33\textwidth}<{}@{}>{\hfill}p{.33\textwidth}@{}}
+            \textbf{پروژه آمار و احتمال مهندسی} & & \textbf{فاز ۱} \\[.5ex]
+            \textbf{نیم‌سال اول ۱۴۰۱-۱۴۰۲} & &  \textbf{ انتشار جواب: #1}\\[.5ex] \hline\hline
+		\end{tabular}
+	\end{center}\smallskip
+%	\def\theenumii{\arabic{enumii}}\def\theenumi{\alph{enumii}}\def\labelenumi{\theenumi)}\def\labelenumii{\theenumii)}%
+}
+
+\newcommand{\Rule}{\ \hfill\rule{\linewidth}{0.5pt}\hfill\ \par\vspace*{-2ex}\par}
+\newcommand{\DescRule}{\ \hfill\rule{\linewidth}{1pt}\hfill\ \vspace*{-2ex}\par}
+\def\rank{\mathop{\mathrm{rank}}\nolimits}
+
+\begin{document}
+\makeHead{بهمن 17}
+\begin{description}
+%	\item{} \input{description.tex}
+	
+%	\DescRule
+
+	\item{\textbf{سوال 1.}} \input{NC14011HW02-q1.tex}
+	
+	\Rule
+	
+	\item{\textbf{سوال 2.}} \input{NC14011HW02-q2.tex}
+	
+	\Rule
+	
+	\item{\textbf{سوال 3.}} \input{NC14011HW02-q3.tex}
+	
+	\Rule
+	
+	\item{\textbf{سوال 4.}} \input{NC14011HW02-q4.tex}
+	
+	\Rule
+	
+	\item{\textbf{سوال 5.}} \input{NC14011HW02-q5.tex}
+	
+	\Rule
+	
+	\item{\textbf{سوال 6.}} \input{NC14011HW02-q6.tex}
+	
+	\Rule
+	
+	\item{\textbf{سوال 7.}} \input{NC14011HW02-q7.tex}
+	
+	\Rule
+	
+	\item{\textbf{سوال 8.}} \input{NC14011HW02-q8.tex}
+	
+	\Rule
+	
+	\item{\textbf{سوال 9.}} \input{NC14011HW02-q9.tex}
+	
+	\Rule
+	
+	\item{\textbf{سوال 10.}} \input{NC14011HW02-q10.tex}
+	
+	\Rule
+	
+	\item{\textbf{سوال 11.}} \input{NC14011HW02-q11.tex}
+	
+	\Rule
+	
+	\item{\textbf{سوال 12.}} \input{NC14011HW02-q12.tex}
+
+        \Rule
+	
+	\item{\textbf{سوال 13.}} \input{NC14011HW02-q13.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 14.}} \input{NC14011HW02-q14.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 15.}} \input{NC14011HW02-q15.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 16.}} \input{NC14011HW02-q16.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 17.}} \input{NC14011HW02-q17.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 18.}} \input{NC14011HW02-q18.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 19.}} \input{NC14011HW02-q19.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 20.}} \input{NC14011HW02-q20.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 21.}} \input{NC14011HW02-q21.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 22.}} \input{NC14011HW02-q22.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 23.}} \input{NC14011HW02-q23.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 24.}} \input{NC14011HW02-q24.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 25.}} \input{NC14011HW02-q25.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 26.}} \input{NC14011HW02-q26.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 27.}} \input{NC14011HW02-q27.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 28.}} \input{NC14011HW02-q28.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 29.}} \input{NC14011HW02-q29.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 30.}} \input{NC14011HW02-q30.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 31.}} \input{NC14011HW02-q31.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 32.}} \input{NC14011HW02-q32.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 33.}} \input{NC14011HW02-q33.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 34.}} \input{NC14011HW02-q34.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 35.}} \input{NC14011HW02-q35.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 36.}} \input{NC14011HW02-q36.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 37.}} \input{NC14011HW02-q37.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 38.}} \input{NC14011HW02-q38.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 39.}} \input{NC14011HW02-q39.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 40.}} \input{NC14011HW02-q40.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 41.}} \input{NC14011HW02-q41.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 42.}} \input{NC14011HW02-q42.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 43.}} \input{NC14011HW02-q43.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 44.}} \input{NC14011HW02-q44.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 45.}} \input{NC14011HW02-q45.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 46.}} \input{NC14011HW02-q46.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 47.}} \input{NC14011HW02-q47.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 48.}} \input{NC14011HW02-q48.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 49.}} \input{NC14011HW02-q49.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 50.}} \input{NC14011HW02-q50.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 51.}} \input{NC14011HW02-q51.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 52.}} \input{NC14011HW02-q52.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 53.}} \input{NC14011HW02-q53.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 54.}} \input{NC14011HW02-q54.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 55.}} \input{NC14011HW02-q55.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 56.}} \input{NC14011HW02-q56.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 57.}} \input{NC14011HW02-q57.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 58.}} \input{NC14011HW02-q58.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 59.}} \input{NC14011HW02-q59.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 60.}} \input{NC14011HW02-q60.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 61.}} \input{NC14011HW02-q61.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 62.}} \input{NC14011HW02-q62.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 63.}} \input{NC14011HW02-q63.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 64.}} \input{NC14011HW02-q64.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 65.}} \input{NC14011HW02-q65.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 66.}} \input{NC14011HW02-q66.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 67.}} \input{NC14011HW02-q67.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 68.}} \input{NC14011HW02-q68.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 69.}} \input{NC14011HW02-q69.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 70.}} \input{NC14011HW02-q70.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 71.}} \input{NC14011HW02-q71.tex}
+
+         \Rule
+	
+	\item{\textbf{سوال 72.}} \input{NC14011HW02-q72.tex}
+
+         \Rule
+
+	
+
+
+ 
+
+	\vspace*{+10ex}\ \hfill\textbf{موفق باشید.}
+\end{description}
+\end{document}

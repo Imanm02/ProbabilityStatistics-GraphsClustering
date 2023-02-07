@@ -1,0 +1,51 @@
+سوال شبیه‌سازی ۱
+
+\begin{latin}
+\begin{python}
+def log_likelihood(F, A):
+    N = A.shape[0]
+    C = F.shape[1]
+    log_likelihood = 0
+    for u in range(N):
+        for v in range(N):
+            summ=0
+            for i in range(C):
+                summ += F[u][i]*F[v][i]
+            log_likelihood += numpy.log(3*A[u][v]+(1-2*A[u][v])*
+            numpy.exp(-summ))
+    return log_likelihood
+
+def gradient(F, A, i):
+    gradient = list()
+    N = A.shape[0]
+    C = F.shape[1]
+    for w in range(N):
+        element = 0
+        for v in range(N):
+            summ = 0
+            summP = 0
+            for i in range(C):
+                summp += F[v][i]
+                summ += F[v][i] * F[u][i]
+            element += ((1-2*A[w][v])*(-summp)*numpy.exp(-summ))  /  (3*A[w][v] + (1 - 2*A[w][u]) * (numpy.exp(-summ)))
+        gradient.append(element)
+            
+    return gradient
+
+def train(A, C, iterations = 200):
+ # initialize an F
+    N = A.shape[0]
+    F = np.random.rand(N,C)
+
+    for n in range(iterations):
+        for person in range(N):
+            grad = gradient(F, A, person)
+            F[person] += 0.005*grad # updating F
+            F[person] = np.maximum(0.001 , F[person]) 
+            # F should be nonnegative
+    ll = log_likelihood(F, A)
+    print('At step %4i logliklihood is %5.4f'%(n,ll))
+
+    return F
+\end{python}
+\end{latin}

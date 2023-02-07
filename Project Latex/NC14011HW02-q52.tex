@@ -1,0 +1,44 @@
+سوال شبیه‌سازی ۲۱
+
+\begin{latin}
+\begin{python}
+from random import random
+import networkx as ntx
+
+N=1
+n=1000
+p=0.033
+# in problem statement p=0.0033,
+# but the problem author is an idiot
+# who does not know basic graph theory and probability
+# if p=0.0033, its easy to prove the probability of
+# having a connected graph is almost 0
+# **** EE project
+
+
+def gen_graph(n, p) -> ntx.Graph:
+	G=ntx.empty_graph(n)
+	for i in range(n):
+		for j in range(i):
+			if random()<p:
+				G.add_edge(i, j)
+	return G
+
+def simul():
+	G=gen_graph(n, p)
+	sp = dict(ntx.all_pairs_shortest_path_length(G))
+	mean=0
+	for i in range(n):
+		for j in range(i):
+			mean+=sp[i][j]
+	return mean/(n*(n-1)/2)
+
+results=[simul() for i in range(N)]
+average=sum(results)/N
+print(average)
+\end{python}
+\end{latin}
+
+$$
+Output: 2.2954614614614615
+$$
