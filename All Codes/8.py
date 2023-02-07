@@ -1,0 +1,11 @@
+A,z = create_A()
+realL = Liklyhood(A,z)
+ZList = list()
+LList = list()
+print("best L:", realL)
+for i in range(10):
+    startZ = create_uniform_z(n,k)
+    L,z0,_ = z_fit(A, z, startZ)
+    ZList.append(z0)
+    LList.append(L)
+    print("L=",L, "\tZ=",z0)

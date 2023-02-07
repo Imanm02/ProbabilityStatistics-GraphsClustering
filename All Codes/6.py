@@ -1,0 +1,10 @@
+def Liklyhood(A,z):
+    p = 0
+    for i in range(n):
+        for j in range(n):
+            # print(z[i], z[j])
+            p += - np.log(Q[z[i]-1][z[j]-1] if A[i][j]==1 else (1-Q[z[i]-1][z[j]-1]))
+    return p
+
+A,z = create_A()
+Liklyhood(A,z)
