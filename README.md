@@ -1,4 +1,4 @@
-# Probability and Statistics Project
+# ProbabilityStatistics-GraphsClustering
 
 ### In this project, we had to program 29 python solve 43 theoritical tasks. 
 
