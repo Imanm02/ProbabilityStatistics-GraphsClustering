@@ -19,7 +19,7 @@ The primary goal of this project is to apply probability and statistical concept
 - Solutions to 43 theoretical tasks
 - Detailed explanations for each solution
     
-# Maintainers
+## Maintainers
 - [Iman Mohammadi](https://github.com/Imanm02)
 - [Ali Shahali](https://github.com/alishahali1382)
 - [Parsa Massah](https://github.com/mparsam)
