@@ -23,4 +23,3 @@ The primary goal of this project is to apply probability and statistical concept
 - [Iman Mohammadi](https://github.com/Imanm02)
 - [Ali Shahali](https://github.com/alishahali1382)
 - [Parsa Massah](https://github.com/mparsam)
-- [Amirmahdi Namjoo](https://github.com/titansarus)
